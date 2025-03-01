@@ -61,7 +61,7 @@ public class Program {
                         }
                     }
                     case 4 -> {
-                        System.out.println("INFO: EXIT.");
+                        System.out.println("INFO: EXIT");
                         System.exit(0);
                     }
                     default -> {
@@ -70,9 +70,9 @@ public class Program {
                 }
             }
         } catch (InputMismatchException e) {
-            System.out.println("ERROR: NOT VALID.");
+            System.out.println("ERROR: NOT VALID");
         } catch (IOException er) {
-            System.out.println("ERROR: IO ERROR.");
+            System.out.println("ERROR: IO ERROR");
         }
     }
 }
