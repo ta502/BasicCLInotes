@@ -1,1 +1,1 @@
-# BasicCLInotes
+# BASIC-CLI-NOTES
