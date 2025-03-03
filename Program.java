@@ -10,16 +10,21 @@ public class Program {
     public static void main(String[] args) {
         try (Scanner scan = new Scanner(System.in)) {
             Properties notes = new Properties();
-            System.out.println("    ____  ___   _____ __________     ________    ____     _   ______  _________________");
-            System.out.println("   / __ )/   | / ___//  _/ ____/    / ____/ /   /  _/    / | / / __ \\/_  __/ ____/ ___/");
-            System.out.println("  / __  / /| | \\__ \\ / // /  ______/ /   / /    / /_____/  |/ / / / / / / / __/  \\__ \\ ");
-            System.out.println(" / /_/ / ___ |___/ // // /__/_____/ /___/ /____/ /_____/ /|  / /_/ / / / / /___ ___/ / ");
-            System.out.println("/_____/_/  |_/____/___/\\____/     \\____/_____/___/    /_/ |_/\\____/ /_/ /_____//____/  ");
+            System.out
+                    .println("    ____  ___   _____ __________     ________    ____     _   ______  _________________");
+            System.out.println(
+                    "   / __ )/   | / ___//  _/ ____/    / ____/ /   /  _/    / | / / __ \\/_  __/ ____/ ___/");
+            System.out.println(
+                    "  / __  / /| | \\__ \\ / // /  ______/ /   / /    / /_____/  |/ / / / / / / / __/  \\__ \\ ");
+            System.out
+                    .println(" / /_/ / ___ |___/ // // /__/_____/ /___/ /____/ /_____/ /|  / /_/ / / / / /___ ___/ / ");
+            System.out.println(
+                    "/_____/_/  |_/____/___/\\____/     \\____/_____/___/    /_/ |_/\\____/ /_/ /_____//____/  ");
             System.out.println("WELCOME TO BASIC-CLI-NOTES");
 
             String FilePath = "notes.properties";
 
-            while (true) { 
+            while (true) {
                 try (FileInputStream fw = new FileInputStream(FilePath)) {
                     notes.load(fw);
                 }
@@ -51,7 +56,7 @@ public class Program {
                         String user_input_2 = scan.next();
                         if (notes.containsKey(user_input_2)) {
                             notes.remove(user_input_2);
-                            
+
                             try (FileOutputStream fo = new FileOutputStream(FilePath)) {
                                 notes.store(fo, null);
                             }
@@ -66,7 +71,7 @@ public class Program {
                     }
                     default -> {
                         throw new InputMismatchException();
-                    }    
+                    }
                 }
             }
         } catch (InputMismatchException e) {
