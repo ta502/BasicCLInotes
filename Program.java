@@ -10,18 +10,6 @@ public class Program {
     public static void main(String[] args) {
         try (Scanner scan = new Scanner(System.in)) {
             Properties notes = new Properties();
-            System.out
-                    .println("    ____  ___   _____ __________     ________    ____     _   ______  _________________");
-            System.out.println(
-                    "   / __ )/   | / ___//  _/ ____/    / ____/ /   /  _/    / | / / __ \\/_  __/ ____/ ___/");
-            System.out.println(
-                    "  / __  / /| | \\__ \\ / // /  ______/ /   / /    / /_____/  |/ / / / / / / / __/  \\__ \\ ");
-            System.out
-                    .println(" / /_/ / ___ |___/ // // /__/_____/ /___/ /____/ /_____/ /|  / /_/ / / / / /___ ___/ / ");
-            System.out.println(
-                    "/_____/_/  |_/____/___/\\____/     \\____/_____/___/    /_/ |_/\\____/ /_/ /_____//____/  ");
-            System.out.println("WELCOME TO BASIC-CLI-NOTES");
-
             String FilePath = "notes.properties";
 
             while (true) {
@@ -33,6 +21,7 @@ public class Program {
                 System.out.println("2. ADD A NOTE");
                 System.out.println("3. REMOVE A NOTE");
                 System.out.println("4. EXIT");
+                System.out.println("5. ABOUT");
                 int user_input = scan.nextInt();
                 switch (user_input) {
                     case 1 -> {
@@ -69,9 +58,13 @@ public class Program {
                         System.out.println("INFO: EXIT");
                         System.exit(0);
                     }
-                    default -> {
-                        throw new InputMismatchException();
+                    case 5 -> {
+                        System.out.println("BasicCLInotes IS A BARE-BONES COMMAND LINE NOTE-TAKING PROGRAM.");
+                        System.out.println("THIS SOFTWARE IS RELEASED UNDER NO LICENSE.");
+                        System.out.println("VERSION 1.0");
+                        System.out.println("Made by @ta502 (Talal)");
                     }
+                    default -> throw new InputMismatchException();
                 }
             }
         } catch (InputMismatchException e) {
